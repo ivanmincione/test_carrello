@@ -40,7 +40,8 @@
                     </td>
                     <td data-th="Subtotal" class="text-center">$<span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
                     <td class="actions" data-th="">
-                        <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
+                        {{-- refresh da azzurro a giallo --}}
+                        <button class="btn btn-warning btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
                         <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash-o"></i></button>
                         <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
                     </td>
