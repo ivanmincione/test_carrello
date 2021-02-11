@@ -9,6 +9,7 @@
         <span id="status"></span>
 
         <div class="row">
+            <h1>Tutti i prodotti</h1>
 
             @foreach($products as $product)
                 <div class="col-xs-18 col-sm-6 col-md-3">
