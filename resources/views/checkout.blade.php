@@ -19,8 +19,10 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                @if (!session()->get('cart'))
+                    <h1>non ci sono prodotti</h1>
+                @else
                 <div class="items-checkout">
-                    <h1>tutti i tuoi prodotti</h1>
                     @foreach ($items as $item)
                         <div class="card">
                             <p>{{ $item['name'] }}</p>
@@ -53,7 +55,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-
+                @endif
             </div>
         </div>
     </div>
