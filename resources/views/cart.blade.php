@@ -57,6 +57,9 @@
         <tr>
             <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
             <td colspan="2" class="hidden-xs"></td>
+            <td>
+                <a href="{{ route('checkout.index') }}" class="btn btn-info">Procedi con l'ordine</a>
+            </td>
             <td class="hidden-xs text-center"><strong>Total $<span class="cart-total">{{ $total }}</span></strong></td>
         </tr>
         </tfoot>

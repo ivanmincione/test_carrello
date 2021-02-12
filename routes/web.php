@@ -13,10 +13,14 @@
 
 Route::get('/', 'ProductsController@index');
 
-Route::get('cart', 'ProductsController@cart');
+Route::get('cart', 'ProductsController@cart')->name('cart');
 
 Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
 
 Route::patch('update-cart', 'ProductsController@update');
 
 Route::delete('remove-from-cart', 'ProductsController@remove');
+
+// rotta checkout
+Route::get('checkout', 'CheckoutController@index')->name('checkout.index');
+// Route::post('/checkout/order', 'Site\CheckoutController@placeOrder')->name('checkout.place.order');

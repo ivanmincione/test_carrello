@@ -1,7 +1,32 @@
 <div class="col-lg-12 col-sm-12 col-12 main-section">
     <div class="dropdown">
         <button type="button" class="btn btn-info" data-toggle="dropdown">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+
+            @if (!session()->get('cart'))
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">0 €</span>
+
+            @else
+                @php
+                $elementi = session()->get('cart');
+                $totale = 0;
+                @endphp
+                {{-- {{ dd($elementi) }} --}}
+                @foreach ($elementi as $element)
+                    {{-- {{$element['name'] }}
+                    {{$element['quantity'] }}
+                    {{$element['price'] }} --}}
+                    @php
+                    $subtotale = $element['price'] * $element['quantity'];
+                    $totale = $subtotale + $totale;
+                    @endphp
+
+                @endforeach
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ $totale }} €</span>
+                
+            @endif
+
+            {{-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span> --}}
+
         </button>
         <div class="dropdown-menu">
             <div class="row total-header-section">

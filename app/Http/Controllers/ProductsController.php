@@ -147,4 +147,15 @@ class ProductsController extends Controller
 
         return number_format($total, 2);
     }
+
+    // CHECKOUT
+    // public function checkout(Request $request)
+    //     {
+    //         dd($request);
+    //         $sessionCart = $request->session()->get('cart');
+    //         if(!$sessionCart || count($sessionCart['items']) === 0) {
+    //             return redirect()->route('cart');
+    //         }
+    //         return view('checkout',['title' => 'Checkout | PHP E-commerce']);
+    //     }
 }
